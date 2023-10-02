@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+
+<h1>Calculate</h1>
+{% if output %}
+<h2>{{ num }} {{ output }}</h2>
+{% else %}
+<h2>No number provided!</h2>
+{% endif %}
+<a href="/">Go home</a>
+
+{% endblock %}
