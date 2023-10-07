@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+
+{% block head %}
+<title>Registry</title>
+{% endblock %}
+
+{% block nav %}
+    <ul>    
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('regStudents') }}">Registered Students</a></li>
+    </ul>
+{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<div class="header">
+    <h1 style="text-align: center;">Registered Students</h1>
+</div>
+<div class="table">
+    <table>
+        <tr class="tHead">
+            <th scope="col">Name</th>
+            <th scope="col">Organization</th>
+        </tr>
+        
+        {% for name, org in registry.items() %}
+        <tr class="tContents">
+            <td>{{ name }}</td>
+            <td>{{ org }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+
+{% endblock %}

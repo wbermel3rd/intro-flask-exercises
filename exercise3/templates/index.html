@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+
+{% block nav %}
+    <ul>    
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('regStudents') }}">Registered Students</a></li>
+    </ul>
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+<br>
+<br>
+<br>
+<div>
+    <h1>Register</h1>
+</div>
+
+<form method="POST" >
+        <div>
+            <label for="name" class="form-label">Enter name: </label>
+            <input type="text" class="form-control" name="name" id="name" required>
+        </div>
+        <br>
+        <div>
+            <label for="organization" class="form-label">Choose an organization: </label> 
+            <select class="form-select" id="organization" name="organization"required>
+                <option value="" disabled selected>Select an organization</option>
+                {% for org in organizations %}
+                    <option value="{{ org }}">{{ org }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    <button type="submit" value="Register">Register</button> 
+</form>
+
+{% if error %}
+    <div class="alert alert-danger mt-3">{{ error }}</div>
+{% endif %}
+
+{% endblock %}
