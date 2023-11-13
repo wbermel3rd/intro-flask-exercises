@@ -1,4 +1,6 @@
 # intro-flask-exercises
+# ITSC-3155
+# William Bermel III
 help from:
 https://strftime.org/ for learning parameters to strftime
 https://chegg.com/ for learning how to call current date/time based on timezone
